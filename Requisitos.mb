@@ -1,0 +1,20 @@
+* Personal Finance HUB - Requisitos Funcionais 
+
+🔹 Módulo de Usuários
+✅ O sistema deve permitir que o usuário faça cadastro.
+✅ O usuário pode fazer login e logout.
+✅ O usuário pode atualizar seu perfil (nome, e-mail, senha).
+✅ O sistema deve armazenar senhas de forma segura (hashing).
+
+🔹 Módulo de Transações Financeiras
+✅ O usuário pode cadastrar transações (receitas e despesas).
+✅ Cada transação deve ter um valor, data, tipo (receita/despesa) e categoria.
+✅ O usuário pode listar, editar e excluir transações.
+
+🔹 Módulo de Categorias
+✅ O sistema deve permitir que o usuário crie categorias personalizadas.
+✅ As transações devem estar vinculadas a uma categoria.
+
+🔹 Módulo de Relatórios e Dashboard
+✅ O sistema deve gerar um relatório de receitas e despesas por período.
+✅ O usuário pode visualizar gráficos para analisar seu fluxo financeiro.
