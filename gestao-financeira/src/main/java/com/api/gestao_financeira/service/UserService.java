@@ -5,6 +5,8 @@ import com.api.gestao_financeira.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -23,5 +25,9 @@ public class UserService {
 
     public User salvarUser(User user) {
         return usuarioRepository.save(user);
+    }
+
+    public Optional<User> findById(UUID id) {
+        return usuarioRepository.findById(id);
     }
 }

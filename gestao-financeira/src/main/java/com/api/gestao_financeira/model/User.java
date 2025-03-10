@@ -1,16 +1,12 @@
 package com.api.gestao_financeira.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
 import java.util.UUID;
 @Entity
 @Table(name = "usuarios")
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class User {
 
     @Id
