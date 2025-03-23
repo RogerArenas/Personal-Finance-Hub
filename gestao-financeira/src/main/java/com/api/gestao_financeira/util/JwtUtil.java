@@ -3,14 +3,15 @@ package com.api.gestao_financeira.util;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
-
+@Component
 public class JwtUtil {
 
-    private static final String SECRET_KEY="CHAVE MUITO FORTE PARA PROJETER O JWT BROTHER";
+    private static final String SECRET_KEY="123456C";
     private static final long EXPIRATION_DATE=86400000;
 
 

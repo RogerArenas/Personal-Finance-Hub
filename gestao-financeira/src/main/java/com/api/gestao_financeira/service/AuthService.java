@@ -5,20 +5,30 @@ import com.api.gestao_financeira.model.UserSecurity;
 import com.api.gestao_financeira.repository.UserRepository;
 import com.api.gestao_financeira.security.Enuns.UserRole;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserService userService;
 
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserService userService) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.userService = userService;
+    }
+
     public void registerUser(String username, String password, String name, String mail) {
+
+        if(userRepository.findByUsername(username).isPresent()){
+            throw new DataIntegrityViolationException("Username already exists");
+        }
 
         UserSecurity userSecurity = new UserSecurity();
         userSecurity.setUsername(username);
